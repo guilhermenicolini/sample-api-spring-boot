@@ -21,23 +21,29 @@ git clone git@github.com:guilhermenicolini/sample-api-spring-boot.git
 cd sample-api-spring-boot
 ```
 
-OSX & Linux
+Run
 ```sh
 ./gradlew bootRun
 ```
 
-Windows
-```sh
-gradlew bootRun 
-```
-
 ## Swagger documentation
 
-http://localhost:8080/swagger-ui.html
+http://localhost:9000/swagger-ui.html
 
 ## Running the tests
 
 Change application.properties jwt.secret to any value.
+
+Change application.properties datasource to H2 and token jwt:
+```sh
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driverClassName=org.h2.Driver
+
+jwt.secret=mytokensecret
+```
+
 In Objects.java file, change the value of wrongToken(), noExpirationToken(), expiredToken() and invalidToken() for your token.
 
 OSX & Linux
@@ -66,3 +72,6 @@ This project is licensed under the MIT License - see the [LICENCE.md](LICENCE.md
 * Unit tests
 * OpenAPI (Swagger)
 * HATEOAS
+* Jacoco
+* Sonar
+* Heroku deploy
