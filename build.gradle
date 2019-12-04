@@ -1,0 +1,71 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'org.sonarqube' version '2.8'
+	id 'jacoco'
+}
+
+group = 'com.github.guilhermenicolini'
+version = '1.0.0-RELEASE'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// openapi
+	compile 'org.springdoc:springdoc-openapi-ui:1.2.11'
+
+	// utils
+	compile 'io.jsonwebtoken:jjwt:0.9.1'
+	compile 'org.json:json:20190722'
+
+	// db
+	compile 'mysql:mysql-connector-java:8.0.18'
+
+	testImplementation 'com.h2database:h2'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+jacocoTestReport {
+	group = "Reporting"
+	reports {
+		xml.enabled true
+		csv.enabled false
+		html.enabled true
+		html.destination file("${buildDir}/reports/coverage")
+		xml.destination file("${buildDir}/reports/jacoco/jacocoReport.xml")
+	}
+}
+
+sonarqube {
+	properties {
+		property "sonar.projectKey", "guilhermenicolini_sample-api-spring-boot"
+		property "sonar.organization", "guilhermenicolini"
+		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.login", "token"
+		property "sonar.exclusions", "**/domain/*.java, **/dto/*.java, **OpenApiConfig.java"
+	}
+}
