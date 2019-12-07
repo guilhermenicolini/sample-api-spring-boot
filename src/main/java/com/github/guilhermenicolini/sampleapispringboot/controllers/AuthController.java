@@ -40,9 +40,6 @@ public class AuthController {
             @ApiResponse(responseCode = "400", description = "Business errors", content = @Content(
                     schema = @Schema(implementation = ResponseError.class)
             )),
-            @ApiResponse(responseCode = "401", description = "Unauthorized", content = @Content(
-                    schema = @Schema(implementation = ResponseError.class)
-            )),
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(
                     schema = @Schema(implementation = ResponseError.class)
             ))

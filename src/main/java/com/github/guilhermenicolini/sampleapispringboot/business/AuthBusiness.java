@@ -3,6 +3,7 @@ package com.github.guilhermenicolini.sampleapispringboot.business;
 import com.github.guilhermenicolini.sampleapispringboot.domain.User;
 import com.github.guilhermenicolini.sampleapispringboot.dto.LoginDto;
 import com.github.guilhermenicolini.sampleapispringboot.dto.UserDto;
+import com.github.guilhermenicolini.sampleapispringboot.exceptions.BusinessException;
 import com.github.guilhermenicolini.sampleapispringboot.exceptions.UnauthorizedException;
 import com.github.guilhermenicolini.sampleapispringboot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class AuthBusiness {
         User user = userService.findByEmail(payload.getEmail());
         if (user == null ||
                 !userService.checkPassword(payload.getPassword(), user.getPassword())) {
-            throw new UnauthorizedException("Invalid login or password");
+            throw new BusinessException("Invalid login or password");
         }
 
         return new UserDto(user);
