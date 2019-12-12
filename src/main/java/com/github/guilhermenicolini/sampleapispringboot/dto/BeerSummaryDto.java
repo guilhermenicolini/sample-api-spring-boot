@@ -22,7 +22,7 @@ public class BeerSummaryDto extends RepresentationModel<BeerSummaryDto> {
     private String brewer;
 
     @Schema
-    private Integer hating;
+    private Integer rating;
 
     public BeerSummaryDto() {}
 
@@ -30,7 +30,7 @@ public class BeerSummaryDto extends RepresentationModel<BeerSummaryDto> {
         setId(beer.getId());
         setBeerName(beer.getBeerName());
         setBrewer(beer.getBrewer());
-        setHating(beer.getHating());
+        setRating(beer.getRating());
 
         add(linkTo(BeerController.class).slash(id).withSelfRel());
     }
@@ -59,12 +59,12 @@ public class BeerSummaryDto extends RepresentationModel<BeerSummaryDto> {
         this.brewer = brewer;
     }
 
-    public Integer getHating() {
-        return hating;
+    public Integer getRating() {
+        return rating;
     }
 
-    public void setHating(Integer hating) {
-        this.hating = hating;
+    public void setRating(Integer rating) {
+        this.rating = rating;
     }
 
     @Override

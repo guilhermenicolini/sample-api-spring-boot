@@ -37,10 +37,10 @@ public class BeerDto extends RepresentationModel<BeerDto> {
     private Long sampled;
 
     @Schema(required = true)
-    @NotNull(message = "Hating is required")
-    @Min(value = 1, message = "Hating must be between 1 and 5")
-    @Max(value = 5, message = "Hating must be between 1 and 5")
-    private Integer hating;
+    @NotNull(message = "Rating is required")
+    @Min(value = 1, message = "Rating must be between 1 and 5")
+    @Max(value = 5, message = "Rating must be between 1 and 5")
+    private Integer rating;
 
     @Schema
     private String notes;
@@ -65,7 +65,7 @@ public class BeerDto extends RepresentationModel<BeerDto> {
     public BeerDto() {
         price = 0D;
         sampled = 0L;
-        hating = 0;
+        rating = 0;
         abv = 0D;
         ibu = 0;
     }
@@ -76,7 +76,7 @@ public class BeerDto extends RepresentationModel<BeerDto> {
         brewer = beer.getBrewer();
         price = beer.getPrice();
         sampled = beer.getSampled().getTime();
-        hating = beer.getHating();
+        rating = beer.getRating();
         notes = beer.getNotes();
         abv = beer.getAbv();
         ibu = beer.getIbu();
@@ -126,12 +126,12 @@ public class BeerDto extends RepresentationModel<BeerDto> {
         this.sampled = sampled;
     }
 
-    public Integer getHating() {
-        return hating;
+    public Integer getRating() {
+        return rating;
     }
 
-    public void setHating(Integer hating) {
-        this.hating = hating;
+    public void setRating(Integer rating) {
+        this.rating = rating;
     }
 
     public String getNotes() {

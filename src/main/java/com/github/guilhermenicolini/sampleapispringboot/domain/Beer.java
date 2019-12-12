@@ -19,7 +19,7 @@ public class Beer {
     private String brewer;
     private Double price;
     private Timestamp sampled;
-    private Integer hating;
+    private Integer rating;
     private String notes;
 
     private Double abv;
@@ -60,7 +60,7 @@ public class Beer {
         brewer = dto.getBrewer();
         price = dto.getPrice();
         sampled = new Timestamp(dto.getSampled());
-        hating = dto.getHating();
+        rating = dto.getRating();
         notes = dto.getNotes();
         abv = dto.getAbv();
         ibu = dto.getIbu();
@@ -126,12 +126,12 @@ public class Beer {
         this.sampled = sampled;
     }
 
-    public Integer getHating() {
-        return hating;
+    public Integer getRating() {
+        return rating;
     }
 
-    public void setHating(Integer hating) {
-        this.hating = hating;
+    public void setRating(Integer rating) {
+        this.rating = rating;
     }
 
     public String getNotes() {

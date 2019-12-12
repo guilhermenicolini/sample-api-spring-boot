@@ -33,7 +33,7 @@ public class BeerServiceTest extends BaseTest {
         assertEquals(BEER_BREWER, beers.get(0).getBrewer());
         assertEquals(12.9, beers.get(0).getPrice());
         assertEquals(1573776000000L, beers.get(0).getSampled().getTime());
-        assertEquals(5, beers.get(0).getHating());
+        assertEquals(5, beers.get(0).getRating());
         assertEquals(BEER_NOTES, beers.get(0).getNotes());
         assertEquals(4.5, beers.get(0).getAbv());
         assertEquals(12, beers.get(0).getIbu());
@@ -67,7 +67,7 @@ public class BeerServiceTest extends BaseTest {
         assertEquals(BEER_BREWER, beer.getBrewer());
         assertEquals(12.9, beer.getPrice());
         assertEquals(1573776000000L, beer.getSampled().getTime());
-        assertEquals(5, beer.getHating());
+        assertEquals(5, beer.getRating());
         assertEquals(BEER_NOTES, beer.getNotes());
         assertEquals(4.5, beer.getAbv());
         assertEquals(12, beer.getIbu());
@@ -101,7 +101,7 @@ public class BeerServiceTest extends BaseTest {
         assertEquals(BEER_BREWER, beer.getBrewer());
         assertEquals(12.9, beer.getPrice());
         assertEquals(1573776000000L, beer.getSampled().getTime());
-        assertEquals(5, beer.getHating());
+        assertEquals(5, beer.getRating());
         assertEquals(BEER_NOTES, beer.getNotes());
         assertEquals(4.5, beer.getAbv());
         assertEquals(12, beer.getIbu());
@@ -136,7 +136,7 @@ public class BeerServiceTest extends BaseTest {
         assertEquals("Brewer 2", beer.getBrewer());
         assertEquals(22.9, beer.getPrice());
         assertEquals(1563776000000L, beer.getSampled().getTime());
-        assertEquals(1, beer.getHating());
+        assertEquals(1, beer.getRating());
         assertEquals("Notes 2", beer.getNotes());
         assertEquals(24.5, beer.getAbv());
         assertEquals(22, beer.getIbu());

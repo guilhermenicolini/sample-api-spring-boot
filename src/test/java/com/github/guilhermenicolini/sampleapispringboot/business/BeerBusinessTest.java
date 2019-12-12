@@ -49,7 +49,7 @@ public class BeerBusinessTest extends BaseTest {
         assertEquals(USER_ID, beers.get(0).getId());
         assertEquals("Beer Name", beers.get(0).getBeerName());
         assertEquals("Brewer", beers.get(0).getBrewer());
-        assertEquals(5, beers.get(0).getHating());
+        assertEquals(5, beers.get(0).getRating());
     }
 
     @Test
@@ -66,7 +66,7 @@ public class BeerBusinessTest extends BaseTest {
         assertEquals("Brewer", beer.getBrewer());
         assertEquals(12.9, beer.getPrice());
         assertEquals(1573776000000L, beer.getSampled());
-        assertEquals(5, beer.getHating());
+        assertEquals(5, beer.getRating());
         assertEquals("Notes", beer.getNotes());
         assertEquals(4.5, beer.getAbv());
         assertEquals(12, beer.getIbu());

@@ -88,7 +88,7 @@ public class Objects {
         obj.setBrewer("Brewer");
         obj.setPrice(12.9);
         obj.setSampled(TimestampUtil.fromMillis(1573776000000L));
-        obj.setHating(5);
+        obj.setRating(5);
         obj.setNotes("Notes");
         obj.setAbv(4.5);
         obj.setIbu(12);
@@ -122,7 +122,7 @@ public class Objects {
         obj.setBrewer("Brewer");
         obj.setPrice(12.9);
         obj.setSampled(TimestampUtil.fromMillis(1573776000000L));
-        obj.setHating(5);
+        obj.setRating(5);
         obj.setNotes("Notes");
         obj.setAbv(4.5);
         obj.setIbu(12);
@@ -154,7 +154,7 @@ public class Objects {
         obj.setBrewer("Brewer 2");
         obj.setPrice(22.9);
         obj.setSampled(TimestampUtil.fromMillis(1563776000000L));
-        obj.setHating(1);
+        obj.setRating(1);
         obj.setNotes("Notes 2");
         obj.setAbv(24.5);
         obj.setIbu(22);
