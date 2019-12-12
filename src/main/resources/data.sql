@@ -24,7 +24,7 @@ insert into diary (
     ,brewer
     ,price
     ,sampled
-    ,hating
+    ,rating
     ,notes
     ,abv
     ,ibu
