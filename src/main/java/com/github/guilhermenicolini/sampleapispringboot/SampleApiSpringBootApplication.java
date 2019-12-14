@@ -4,12 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.annotation.PostConstruct;
 import java.util.Date;
 import java.util.TimeZone;
 
 @SpringBootApplication
+@EnableScheduling
 public class SampleApiSpringBootApplication {
 
 	private static final Logger logger = LoggerFactory.getLogger(SampleApiSpringBootApplication.class);
