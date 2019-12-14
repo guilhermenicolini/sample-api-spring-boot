@@ -13,7 +13,7 @@ public class HealthCheckJob {
     @Value("${api.url}")
     private String url;
 
-    @Scheduled(fixedDelay = 60000)
+    @Scheduled(cron = "${api.cron}")
     public void checkHealth() throws Exception {
 
         URL obj = new URL(url);
